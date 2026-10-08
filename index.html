@@ -66,27 +66,20 @@ nav a.btn{color:#fff;padding:.55rem 1.2rem}
 }
 
 /* hero */
-.hero{background:linear-gradient(180deg,var(--ice),var(--white));padding:clamp(2.5rem,6vw,4.5rem) 0 0}
-.chart{width:min(920px,100%);margin:0 auto;background:#fff;border:2px solid var(--line);border-radius:26px;padding:clamp(1.6rem,4vw,3rem) clamp(.8rem,3vw,2rem) clamp(4.4rem,8vw,6rem);box-shadow:0 24px 50px -28px rgba(45,91,227,.45)}
-.chart-in{container-type:inline-size;text-align:center;font-family:Sora,sans-serif}
-.crow{display:grid;grid-template-columns:2.2rem 1fr 2.2rem;align-items:center;margin-top:1.3em}
-.crow:first-child{margin-top:0}
-.crow.tight{margin-top:calc(1.3em - 5.88cqw)}
-.idx{font:600 .78rem Figtree,sans-serif;color:var(--muted);opacity:.6;text-align:left}
-.letters{display:flex;justify-content:center;flex-wrap:wrap;gap:.28em;font-weight:800;letter-spacing:.02em}
-.letters span{color:#CDD9DC}
-.letters.l0{font-size:15cqw;gap:.5em}
-.letters.l1{font-size:8.6cqw}
-.letters.l2{font-size:5.6cqw}
-.letters.l3{font-size:4.1cqw;gap:.3em}
-.letters.l0 span,.letters.l3 span{color:#DFE8EA}
-.letters span.hi-b{color:var(--bluette)}
-.letters span.hi-t{color:var(--teal-d)}
-.cname{font-size:6.4cqw;line-height:1.4;font-weight:700;color:var(--bluette-d);text-transform:none}
-.csub{font-size:max(3.4cqw,.75rem);margin-top:1.5em;color:var(--teal-d);font-weight:600;display:flex;align-items:center;justify-content:center;gap:.7rem;text-transform:uppercase;letter-spacing:.08em}
-.csub::before,.csub::after{content:"";height:2px;width:clamp(1.5rem,8cqw,4rem);background:var(--line)}
-.duo{position:relative;z-index:2;width:min(780px,92%);margin:calc(-1 * clamp(2.6rem,5vw,3.6rem)) auto 0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.dbox{display:block;text-align:left;border:0;cursor:pointer;color:#fff;border-radius:22px;padding:1.3rem 1.5rem 1.4rem;font-family:inherit;box-shadow:0 20px 32px -16px rgba(20,48,74,.55);transition:transform .2s}
+.hero{position:relative;overflow:hidden;isolation:isolate;text-align:center;padding:clamp(4rem,10vw,6.5rem) 0 clamp(3.2rem,7vw,5rem)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(52% 60% at 12% 8%, rgba(107,154,196,.40), transparent 68%),
+  radial-gradient(48% 55% at 90% 18%, rgba(151,216,196,.38), transparent 66%),
+  radial-gradient(60% 65% at 50% 115%, rgba(107,154,196,.22), transparent 70%),
+  linear-gradient(180deg,#fdffff,var(--mist))}
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;font:700 .78rem Figtree,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-d)}
+.eyebrow::before,.eyebrow::after{content:"";height:2px;width:1.8rem;background:var(--teal)}
+.hero h1{margin-top:1.1rem;font-size:clamp(2.3rem,5.4vw,3.6rem);color:var(--ink)}
+.hero h1 span{display:block;color:var(--bluette);font-size:.52em;font-weight:600;margin-top:.5rem;letter-spacing:.01em}
+.hero .loc{margin-top:1rem;font:600 1rem Figtree,sans-serif;color:var(--teal-d);letter-spacing:.04em;text-align:center}
+.hero .tagline{margin:1.1rem auto 0;max-width:46ch;color:var(--muted);font-size:1.05rem}
+.duo{position:relative;z-index:2;width:min(780px,94%);margin:2.6rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.dbox{display:block;text-align:left;border:0;cursor:pointer;color:#fff;border-radius:22px;padding:1.3rem 1.5rem 1.4rem;font-family:inherit;box-shadow:0 20px 32px -16px rgba(20,48,74,.4);transition:transform .2s}
 .dbox:hover{transform:translateY(-4px)}
 .dbox.a{background:var(--bluette)}
 .dbox.k{background:var(--teal-d)}
@@ -94,7 +87,7 @@ nav a.btn{color:#fff;padding:.55rem 1.2rem}
 .dbox strong{display:block;font:700 1.25rem/1.2 Sora,sans-serif}
 .dbox .d{display:block;font-size:.93rem;opacity:.95;margin:.3rem 0 .9rem;line-height:1.4}
 .dbox .go{font-weight:600;font-size:.95rem;border-bottom:2px solid rgba(255,255,255,.6)}
-@media (max-width:560px){.duo{grid-template-columns:1fr}.idx{display:none}.crow{grid-template-columns:1fr}}
+@media (max-width:560px){.duo{grid-template-columns:1fr}}
 .stats{padding:clamp(3rem,6vw,4.5rem) 0}
 .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{text-align:center;padding:0 1.4rem}
@@ -124,6 +117,7 @@ nav a.btn{color:#fff;padding:.55rem 1.2rem}
 .tl li{display:grid;grid-template-columns:7.4rem 1fr;gap:.8rem;align-items:baseline}
 .tl b{font:700 .74rem Sora,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--teal-d)}
 .tl span{color:var(--muted);font-size:.95rem}
+.tl li.tl-split{display:block;height:0;margin-top:.5rem;padding-top:.6rem;border-top:1px dashed var(--line)}
 @media (max-width:480px){.tl li{grid-template-columns:1fr}.tl b{margin-bottom:-.1rem}}
 @media (max-width:860px){.doc{grid-template-columns:1fr}.photo{max-width:380px;height:auto;aspect-ratio:3/4}}
 
@@ -135,11 +129,14 @@ nav a.btn{color:#fff;padding:.55rem 1.2rem}
 .panel.on{display:block}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem}
 .item{background:#fff;border:2px solid var(--line);border-radius:14px;padding:1rem 1.1rem;font-weight:500;display:flex;gap:.7rem;align-items:flex-start;line-height:1.35}
+.item strong{font-weight:500}
 .item::before{content:"";flex:none;width:.7rem;height:.7rem;margin-top:.35rem;border-radius:50%;background:var(--teal)}
 .item.extra{grid-column:1/-1;padding:1.3rem 1.5rem}
 .item.extra>div{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
 .item.extra strong{font-size:1.1rem}
 .item.extra .btn{padding:.55rem 1.4rem;font-size:.95rem;margin-top:.3rem}
+.item.hi>div{display:flex;flex-direction:column;gap:.25rem}
+.item.hi strong{color:var(--ink)}
 .item small{display:block;font-weight:400;color:var(--muted);margin-top:.2rem;font-size:.88rem}
 
 /* dove */
@@ -215,17 +212,10 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="chart">
-      <div class="chart-in">
-        <h1 class="sr-only">Studio oculistico Laura Dell'Arti, oculista a Milano</h1>
-        <div class="crow"><i class="idx" aria-hidden="true">0.05</i><div class="letters l0" aria-hidden="true"><span>E</span><span>D</span><span>F</span></div><i></i></div>
-        <div class="crow tight"><i class="idx" aria-hidden="true">0.1</i><div class="letters l1" aria-hidden="true"><span>L</span><span>R</span><span class="hi-b">S</span><span class="hi-b">T</span><span class="hi-b">U</span><span class="hi-b">D</span><span class="hi-b">I</span><span class="hi-b">O</span><span>V</span><span>M</span></div><i></i></div>
-        <div class="crow"><i class="idx" aria-hidden="true">0.4</i><div class="letters l2" aria-hidden="true"><span>E</span><span>V</span><span class="hi-t">O</span><span class="hi-t">C</span><span class="hi-t">U</span><span class="hi-t">L</span><span class="hi-t">I</span><span class="hi-t">S</span><span class="hi-t">T</span><span class="hi-t">I</span><span class="hi-t">C</span><span class="hi-t">O</span><span>F</span><span>G</span></div><i></i></div>
-        <div class="crow"><i class="idx" aria-hidden="true">0.6</i><div class="letters l3" aria-hidden="true"><span>P</span><span>E</span><span>C</span><span>F</span><span>D</span><span>Z</span><span>B</span><span>D</span><span>E</span><span>F</span><span>P</span><span>O</span><span>T</span><span>E</span><span>C</span><span>L</span></div><i></i></div>
-        <div class="crow"><i class="idx" aria-hidden="true">0.8</i><p class="cname" aria-hidden="true">Laura Dell'Arti</p><i></i></div>
-        <p class="csub">Milano · zona Navigli</p>
-      </div>
-    </div>
+    <p class="eyebrow">Studio Oculistico</p>
+    <h1>Laura Dell'Arti<span>Oculista a Milano</span></h1>
+    <p class="loc">Zona Navigli</p>
+    <p class="tagline">Visite oculistiche per adulti e bambini, con un approccio clinico accurato e un rapporto diretto con ogni paziente.</p>
     <div class="duo">
       <button class="dbox a" data-go="adulti">
         <svg viewBox="0 0 48 48" fill="#fff" aria-hidden="true"><circle cx="24" cy="13" r="8.500"/><path d="M6 43c0-10 8-17 18-17s18 7 18 17Z"/></svg>
@@ -267,7 +257,7 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
         <div class="fact">
           <h3>Aree di esperienza</h3>
           <ul class="pills">
-            <li>Neuro-oftalmologia</li>
+            <li>Neuroftalmologia</li>
             <li>Maculopatie e retina</li>
             <li>Oftalmologia pediatrica</li>
             <li>Patologie oculari dell'adulto</li>
@@ -283,8 +273,9 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
           <ul class="tl">
             <li><b>2010</b><span>Laurea in Medicina e Chirurgia, Università degli Studi di Milano</span></li>
             <li><b>2016</b><span>Specializzazione in Oftalmologia, Università degli Studi di Milano</span></li>
-            <li><b>Philadelphia</b><span>Internato in neuro-oftalmologia, Wills Eye Hospital</span></li>
-            <li><b>Londra</b><span>Fellowship in neuro-oftalmologia, Moorfields Eye Hospital</span></li>
+            <li class="tl-split"></li>
+            <li><b>2016</b><span>Internato in neuroftalmologia presso Wills Eye Hospital, Philadelphia (USA)</span></li>
+            <li><b>2016-2018</b><span>Fellowship in neuroftalmologia presso Moorfields Eye Hospital, Londra (UK)</span></li>
           </ul>
         </div>
       </div>
@@ -306,7 +297,7 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 
     <div class="panel on" id="p-adulti" role="tabpanel" aria-labelledby="t-adulti">
       <div class="grid">
-        <div class="item">Prescrizione lenti</div>
+        <div class="item hi"><div><strong>Visite oculistiche degli adulti</strong><small>Valutazione delle problematiche oculari più frequenti (difetti refrattivi, cataratta, maculopatie, patologie del nervo ottico) e valutazione neuroftalmologica</small></div></div>
         <div class="item">Diagnosi di cataratta e patologie della retina</div>
         <div class="item">Visite neuroftalmologiche</div>
         <div class="item">Visita ortottica per trattamento e gestione della diplopia</div>
@@ -316,7 +307,7 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 
     <div class="panel" id="p-bambini" role="tabpanel" aria-labelledby="t-bambini">
       <div class="grid">
-        <div class="item">Visita oculistica pediatrica</div>
+        <div class="item hi"><div><strong>Visite oculistiche pediatriche</strong><small>Valutazione dei difetti refrattivi, screening per l'ambliopia e strabismo</small></div></div>
         <div class="item">Prescrizione lenti</div>
         <div class="item">Visita ortottica per screening e trattamento dell'ambliopia</div>
       </div>
@@ -344,7 +335,7 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 <section id="dove">
   <div class="wrap">
     <h2>Dove ricevo</h2>
-    <p class="lead">Lo studio si trova a Milano, in zona Navigli, e si appoggia inoltre all'Ospedale Policlinico di Milano per eseguire determinate prestazioni: la sede viene valutata sulla base di ciascun caso ed esigenza.</p>
+    <p class="lead">Lo studio si trova a Milano, in zona Navigli, e si appoggia inoltre all'Ospedale Policlinico di Milano e alla clinica Blue Eye per eseguire determinate prestazioni: la sede viene valutata sulla base di ciascun caso ed esigenza.</p>
     <div class="where">
       <div>
         <div class="place main">
@@ -361,6 +352,14 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
             <h3>Ospedale Policlinico di Milano</h3>
             <p>Via Francesco Sforza 28, 20122 Milano</p>
             <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Policlinico+di+Milano+Via+Francesco+Sforza+28" target="_blank" rel="noopener">Apri in Google Maps</a></p>
+          </div>
+        </div>
+        <div class="place minor">
+          <svg class="pi" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="var(--ice)"/><path d="M12 28c4-7 10-11 16-11s12 4 16 11c-4 7-10 11-16 11s-12-4-16-11Z" fill="none" stroke="var(--teal-d)" stroke-width="3"/><circle cx="28" cy="28" r="5.500" fill="var(--teal-d)"/></svg>
+          <div>
+            <h3>Clinica Blue Eye di Milano</h3>
+            <p>Via Pantano, 2, 20122 Milano</p>
+            <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786c6af5be9776b:0x1fd372e27d841183?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener">Apri in Google Maps</a></p>
           </div>
         </div>
       </div>
@@ -381,8 +380,8 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
       <div class="bx">
         <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="var(--ice)"/><rect x="13" y="17" width="30" height="22" rx="4" fill="none" stroke="var(--bluette)" stroke-width="3"/><path d="m15 20 13 10 13-10" fill="none" stroke="var(--bluette)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Email</h3>
-        <p>info@lauradellarti.it</p>
-        <a class="btn" href="mailto:info@lauradellarti.it?subject=Richiesta%20visita%20oculistica">Contatta via email</a>
+        <p>lauradellartioculista@gmail.com</p>
+        <a class="btn" href="mailto:lauradellartioculista@gmail.com?subject=Richiesta%20visita%20oculistica">Contatta via email</a>
       </div>
       <div class="bx">
         <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#1FA855"/><path d="M28 13a15 15 0 0 0-12.900 22.600L13.500 43l7.600-1.500A15 15 0 1 0 28 13Z" fill="none" stroke="#fff" stroke-width="2.600" stroke-linejoin="round"/><path d="M22.500 21c-.9 1.200-1 3.200 1.300 6.200 2.400 3 4.800 4.200 6.600 4.500 1.500.3 3-.8 3.300-2l-3-1.700-1.300 1.100c-1.700-.7-3.200-2.200-4-3.900l1.100-1.300-1.400-3.100c-.6-.2-1.900-.1-2.600.2Z" fill="#fff"/></svg>
