@@ -230,11 +230,14 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 .policy-box p,.policy-box li{color:var(--muted);line-height:1.6}
 .policy-box a{color:var(--bluette-d)}
 /* il testo e la tabella qui sotto sono generati da uno script esterno (Usercentrics):
-   queste regole con !important servono a vincere sullo stile che lo script si porta dietro */
-.policy-box p,.policy-box div{margin:0 0 .9rem !important;padding:0 !important}
-.policy-box :is(h1,h2,h3,h4){margin:1.8rem 0 .6rem !important}
-.policy-box ul,.policy-box ol{margin:0 0 .9rem 1.2rem !important;padding:0 !important}
-.policy-box li{margin:0 0 .3rem !important}
+   queste regole con !important servono a vincere sullo stile che lo script si porta dietro.
+   Azzero tutto (anche eventuali div/spaziatori vuoti usati per separare i blocchi) e poi
+   riaggiungo solo lo spazio che serve davvero, sugli elementi di testo veri e propri. */
+.policy-box :not(table):not(tr):not(thead):not(tbody){margin:0 !important;padding:0 !important;height:auto !important;min-height:0 !important}
+.policy-box :is(p,ul,ol,table,h1,h2,h3,h4,h5,h6){margin-bottom:.9rem !important}
+.policy-box :is(h1,h2,h3,h4,h5,h6){margin-top:1.6rem !important}
+.policy-box ul,.policy-box ol{padding-left:1.2rem !important}
+.policy-box li{margin-bottom:.3rem !important}
 .policy-box table{table-layout:auto !important;width:100% !important;min-width:640px;border-collapse:collapse !important}
 .policy-box th,.policy-box td{white-space:normal !important;word-break:normal !important;min-width:140px;vertical-align:top !important;padding:.6rem .7rem !important}
 .policy-box th:last-child,.policy-box td:last-child{min-width:260px}
