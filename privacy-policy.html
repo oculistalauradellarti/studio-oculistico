@@ -239,8 +239,17 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 .policy-box ul,.policy-box ol{padding-left:1.2rem !important}
 .policy-box li{margin-bottom:.3rem !important}
 .policy-box table{table-layout:auto !important;width:100% !important;min-width:640px;border-collapse:collapse !important}
-.policy-box th,.policy-box td{white-space:normal !important;word-break:normal !important;min-width:140px;vertical-align:top !important;padding:.6rem .7rem !important}
+.policy-box th,.policy-box td{white-space:normal !important;word-break:normal !important;min-width:140px;vertical-align:top !important;padding:.6rem .7rem !important;text-align:left !important}
 .policy-box th:last-child,.policy-box td:last-child{min-width:260px}
+/* sotto i 640px: la tabella non scorre di lato, ogni riga diventa un blocchetto con l'etichetta della colonna accanto al dato */
+@media (max-width:640px){
+  .policy-box table{min-width:0 !important;border:0 !important}
+  .policy-box thead{display:none !important}
+  .policy-box tr{display:block !important;margin-bottom:1.1rem !important;padding-bottom:1.1rem !important;border-bottom:1px solid var(--line) !important}
+  .policy-box tr:last-child{border-bottom:0 !important}
+  .policy-box td{display:block !important;min-width:0 !important;padding:.25rem 0 !important}
+  .policy-box td[data-label]::before{content:attr(data-label);display:block;font:700 .72rem Figtree,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--teal-d);margin-bottom:.15rem}
+}
 </style>
 </head>
 <body>
@@ -297,5 +306,34 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
   </div>
 </footer>
 
+<script>
+// Lo script di Usercentrics inserisce la tabella dopo il caricamento della pagina.
+// Appena compare, etichetto ogni cella con il titolo della sua colonna (serve
+// per mostrarla a blocchi, leggibile, sui telefoni invece di tagliarla).
+(function () {
+  var box = document.querySelector('.uc-privacy-policy');
+  if (!box) return;
+  function labelTables(root) {
+    root.querySelectorAll('table').forEach(function (table) {
+      var headers = Array.prototype.map.call(
+        table.querySelectorAll('thead th, tr:first-child th, tr:first-child td'),
+        function (th) { return th.textContent.trim(); }
+      );
+      if (!headers.length) return;
+      var rows = table.querySelectorAll('tbody tr, tr');
+      rows.forEach(function (tr) {
+        if (tr.querySelector('th')) return; // riga di intestazione, salto
+        var cells = tr.querySelectorAll('td');
+        cells.forEach(function (td, i) {
+          if (headers[i]) td.setAttribute('data-label', headers[i]);
+        });
+      });
+    });
+  }
+  labelTables(box);
+  new MutationObserver(function () { labelTables(box); })
+    .observe(box, { childList: true, subtree: true });
+})();
+</script>
 </body>
 </html>
