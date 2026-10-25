@@ -238,18 +238,15 @@ footer .btn:hover{background:var(--teal);border-color:var(--teal);text-decoratio
 .policy-box :is(h1,h2,h3,h4,h5,h6){margin-top:1.6rem !important}
 .policy-box ul,.policy-box ol{padding-left:1.2rem !important}
 .policy-box li{margin-bottom:.3rem !important}
-.policy-box table{table-layout:auto !important;width:100% !important;min-width:640px;border-collapse:collapse !important}
-.policy-box th,.policy-box td{white-space:normal !important;word-break:normal !important;min-width:140px;vertical-align:top !important;padding:.6rem .7rem !important;text-align:left !important}
-.policy-box th:last-child,.policy-box td:last-child{min-width:260px}
-/* sotto i 640px: la tabella non scorre di lato, ogni riga diventa un blocchetto con l'etichetta della colonna accanto al dato */
-@media (max-width:640px){
-  .policy-box table{min-width:0 !important;border:0 !important}
-  .policy-box thead{display:none !important}
-  .policy-box tr{display:block !important;margin-bottom:1.1rem !important;padding-bottom:1.1rem !important;border-bottom:1px solid var(--line) !important}
-  .policy-box tr:last-child{border-bottom:0 !important}
-  .policy-box td{display:block !important;min-width:0 !important;padding:.25rem 0 !important}
-  .policy-box td[data-label]::before{content:attr(data-label);display:block;font:700 .72rem Figtree,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--teal-d);margin-bottom:.15rem}
-}
+/* niente più tabella "larga con scroll": a qualunque dimensione di schermo ogni riga
+   diventa un blocchetto con l'etichetta della colonna sopra il dato, così non c'è
+   nessuna larghezza minima da far stare nello schermo e nessun taglio possibile */
+.policy-box table{width:100% !important;min-width:0 !important;border:0 !important;border-collapse:collapse !important}
+.policy-box thead{display:none !important}
+.policy-box tr{display:block !important;margin-bottom:1.1rem !important;padding-bottom:1.1rem !important;border-bottom:1px solid var(--line) !important}
+.policy-box tr:last-child{border-bottom:0 !important}
+.policy-box td{display:block !important;min-width:0 !important;padding:.25rem 0 !important;white-space:normal !important;word-break:normal !important;text-align:left !important}
+.policy-box td[data-label]::before{content:attr(data-label);display:block;font:700 .72rem Figtree,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--teal-d);margin-bottom:.15rem}
 </style>
 </head>
 <body>
